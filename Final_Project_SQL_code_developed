@@ -20,9 +20,8 @@ CREATE TABLE public."Sales_transaction"
 CREATE TABLE public."Product"
 (
     "Product id" integer,
-    "Category" character varying(50),
-    "Type" character varying(50),
-    "Product" character varying(100),
+    "Type_id" integer,
+    "Product_name" character varying(100),
     "Description" character varying(200),
     "Price" double precision,
     PRIMARY KEY ("Product id")
@@ -59,7 +58,7 @@ ALTER TABLE public.sales_detail
 
 
 ALTER TABLE public."Product"
-    ADD FOREIGN KEY ("Type")
+    ADD FOREIGN KEY ("Type_id")
     REFERENCES public.product_type (product_type_id)
     NOT VALID;
 
